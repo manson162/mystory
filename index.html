@@ -131,10 +131,11 @@
           <!--Video source-->
           <video id="wireframeVideo" class="video-intro" autoplay loop muted>
             <source src="https://mdbootstrap.com/img/video/animation-intro.mp4" type="video/mp4" />
+            <script>
+                document.getElementById('wireframeVideo').play();
+            </script>
           </video>
-          <script>
-              document.getElementById('wireframeVideo').play();
-          </script>
+
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">

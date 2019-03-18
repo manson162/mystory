@@ -40,6 +40,7 @@
       }
     }
   </style>
+  
 </head>
 
 <body>
@@ -256,7 +257,7 @@
   <!--/.Carousel Wrapper-->
 
   <!--Main layout-->
-  <main>
+  <main id="mywork">
     <div class="container">
 
       <!--Section: Main info-->
@@ -278,7 +279,7 @@
           <div class="col-md-6 mb-4">
 
             <!-- Main heading -->
-            <h3 class="h3 mb-3" id="mywork">My UX Design Process</h3>
+            <h3 class="h3 mb-3">My UX Design Process</h3>
             <p>
 
               <p>Read details below to learn more about MDB.</p>
@@ -654,6 +655,17 @@
     // Animations initialization
     new WOW().init();
   </script>
+  <script>
+$('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top + -100
+        }, 1000);
+    }
+});
+      </script>
 </body>
 
 </html>

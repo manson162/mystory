@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="iso-8859-1"?><html><head><title>Fantasy Grounds Dungeons and Dragons Campaign Outline</title><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" /><link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Andada" /><script>
+        $(document).ready(function()
+        {
+          $("tr:even").css({
+            "background-color":"#dcdfe4"});
+            
+        $('body :not(script)').contents().filter(function() {
+                   return this.nodeType === 3;
+               }).replaceWith(function() {
+                  return this.nodeValue.replace(/\\n/g,'<br />');
+               });            
+        });    
+        
+       
+        </script><style>
+         @media print{      
+              body { font-size: 9pt !important;}    
+              @page { size: letter portrait !important; margin: 0.75cm !important; orphans:4 !important; widows:2 !important; }
+                .story {
+                 column-count: 2 !important;
+                 column-gap: 1em !important;
+                 }
+                .token {
+                    height: 25px !important;
+                    }
+                .treasure {
+                    max-width: 380px !important;
+                    width: 380px !important;
+                }
+                a.xref:after {
+                  content: " (page " target-counter(attr(href, url), page) ")";
+                }
+               .frame {
+                   padding-left: 10px !important;
+                   padding-right: 10px !important;
+                   padding-top: 2px !important;
+                   padding-bottom: 2px !important;
+                   margin-left: 10px !important;
+                   margin-right: 10p !important;
+                   margin-bottom: 5px !important;
+                   background-color: f9f9fa;
+                   border-left: 1px #c9ced3 solid;
+                   border-right: 1px #c9ced3 solid;
+               }     
+                .npclist2 {
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: column wrap !important;
+                align-content: space-around !important;              
+               }
+               .itemlist {
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: column wrap !important;
+                align-content: space-around !important;                     
+               }
+               .npc {
+                    flex: 1 1 160px !important;
+                }               
+               .npc&gt;div {
+                   flex-wrap: nowrap !important;
+               }
+               .line {
+                    display: inline-grid !important;
+                    width: 95% !important;
+                    grid-template-columns: auto auto !important;
+                }                
+                .item {
+                    flex: 1 1 160px !important;
+                }
+                .stat {
+                    font-size: 8px !important;
+                }
+                .statHeader {
+                    font-size: 8px !important;
+                    font-weight: bold;
+                }                
+                .npcname {
+                    font-size: 13px !important;
+                    font-weight: bold;
+                    color: #b5665d;
+                    font-variant: small-caps;
+                }
+                .statHeader {
+                    font-size: 11px !important;
+                    font-weight: bold;
+                    color: #b5665d;
+                    font-variant: small-caps;
+                }
+               .itemname {
+                    font-size: 13px !important;
+               }            
+              table, th, td {
+                font-size: 8px !important;
+              }                   
+               
+                h1 { font-family: Andada; font-size: 14px !important; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15px !important; } 
+                h3 { font-family: Andada; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 14px; } 
+                p { font-family: Andada; font-size: 10px !important; font-style: normal !important; font-variant: normal; font-weight: 400 !important; line-height: 11px !important; } 
+                blockquote { font-family: Andada; font-size: 12pt !important; font-style: normal; font-variant: normal; font-weight: 400; line-height: 13pt; } 
+                pre { font-family: Andada; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; line-height: 11pt; }
+            }                       
+                                
+         h1 { font-family: Andada; font-size: 14pt; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15pt; } h3 { font-family: Andada; font-size: 13pt; font-style: normal; font-variant: normal; font-weight: 700; line-height: 14pt; } p { font-family: Andada; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; line-height: 11pt; } blockquote { font-family: Andada; font-size: 12pt; font-style: normal; font-variant: normal; font-weight: 400; line-height: 13pt; } pre { font-family: Andada; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; line-height: 11pt; }
+                    
+          body
+          {
+          background-color: #f1efed;
+          }
+		  .skill {
+			height: 29px;
+			width: 200px;
+			position: relative;
+			text-overflow: clip;
+		  }
+		  .skillRoll {
+			height: 29px;
+			width: 50px;
+			position: relative;
+		  }		  
+		  .skillBonus {
+			font-size: x-small;		  
+		  }
+ 		 .edge {
+			height: 25px;
+			width: 190px;
+			position: relative;
+			text-overflow: clip;
+			font-size: x-small;
+			padding: 0px;
+			margin: 0px;
+		  }
+ 		 .hindrance {
+			height: 22px;
+			width: 190px;
+			position: relative;
+			text-overflow: clip;
+			font-size: x-small;
+			padding: 0px;
+			margin: 0px;
+		  }
+		  
+		  .derivedStat {
+			font-size: x-large;
+			position: absolute;
+		  }
+		  table, th, td {
+			border: 0px solid black;
+		  }
+		  
+		  .page {
+			page-break-after: always;
+			position: relative;
+		  }
+		  .pagebg {
+		  }		  
+		  .sheetData {
+			position: absolute;
+			font-size: medium;
+		  }
+		  .sheetDataBig {
+			position: absolute; 
+			font-size: x-large;
+		  }
+		  .sheetDataSmall{
+			position: absolute; 
+			font-size: x-small;
+		  }		
+		  .sheetDataXSmall {
+			position: absolute; 
+			font-size: xx-small;
+		  }			  
+		  .sheetDataXSmall TR TD {
+			font-size: xx-small;
+		  }
+		  input[type='checkbox'] {
+			width:8px;
+			height:8px;
+			padding: 0px;
+			margin: 1px;
+		}
+       .frame {
+           padding-left: 10px;
+           padding-right: 10px;
+           padding-top: 5px;
+           padding-bottom: 5px;
+           margin-left: 10%;
+           margin-right: 10%;
+           margin-bottom: 5px;
+           max-width: 80%;
+           background-color: f9f9fa;
+           border-left: 1px #c9ced3 solid;
+           border-right: 1px #c9ced3 solid;
+       }
+       .full {
+           width: 100%;
+           max-width: 800px;
+       }
+       .npc {
+           width: 90%;
+           max-width: 430px;
+           display: inline-block;
+           border-top: 5px #cbb991 groove;
+           border-bottom: 5px #cbb991 groove;
+           background-color: #f7f5f0;
+           padding-right: 10px;
+           padding-left: 10px;
+           margin-right: 10px;
+           margin-left: 10px;
+           margin-top: 10px;
+           margin-bottom: 10px;
+       }
+
+       .treasure {
+           width: 90%;
+           max-width: 430px;
+           display: inline-block;
+           border: 5px #cbb991 groove;
+           background-color: #ebecee;
+           padding-right: 10px;
+           padding-left: 10px;
+           margin-right: 10px;
+           margin-left: 10px;
+           margin-top: 10px;
+           margin-bottom: 10px;       
+           border-radius: 15px;         
+       }
+       .item {
+           width: 90%;
+           max-width: 430px;
+           display: inline-block;
+           border: 5px #cbb991 groove;
+           background-color: #ebecee;
+           padding-right: 10px;
+           padding-left: 10px;
+           margin-right: 10px;
+           margin-left: 10px;
+           margin-top: 10px;
+           margin-bottom: 10px;       
+           border-radius: 15px;           
+       }
+       .itemname {
+            font-size: large;
+            font-weight: bold;
+            color: #b5665d;     
+            font-variant: small-caps;  
+       }
+       .label {
+           font-weight: bold;
+        }
+        .left {
+            float: left;
+            padding-right: 5px;
+        }
+        .stat {
+            display: inline-block;
+        }
+        .npcname {
+            font-size: x-large;
+            font-weight: bold;
+            color: #b5665d;
+            font-variant: small-caps;
+        }
+        .npctype {
+            font-weight: semi-bold;
+            font-style: italic;
+        }
+        .statHeader {
+            font-size: larger;
+            font-weight: bold;
+            color: #b5665d;
+            font-variant: small-caps;
+        }
+        h1 {
+            color: #b5665d;
+            font-variant: small-caps;
+        }
+        hr {
+            color: #b5665d;
+            text-align: center;
+            width: 90%;
+        }
+     
+        .token {
+            height: 50px;
+        }
+        .tokenlist {
+            max-width: 200px;
+            margin-right: 10px;
+            padding-right: 10px;
+        }
+        .tokenlink {
+            display: inline-block;
+        }
+        .encounter {
+           margin: 5px;           
+           padding-left: 10px;
+           padding-right: 10px;
+           padding-top: 0px;
+           padding-bottom: 10px;
+           border: 1px #cbb991 solid;
+           border-radius: 15px;
+           background-color: #f7f5f0;     
+           max-width: 450px;      
+
+        }
+        .itemlist {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: stretch;        
+        }
+        .npclist2 {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: stretch;            
+        }
+        .npclist {          
+          display: grid;
+          grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));          
+          }
+        .npclist div {
+        }
+        .encounter h1 {
+             flex-basis: 100%;
+             align-self: flex-start;
+             width: 100%;             
+         }
+         .story {
+            margin-bottom: 10px;
+            }
+         .line {
+             width: 100%;
+         }
+
+.speech-bubble-ds {
+    background: #efefef;
+    border: 1px solid #a7a7a7;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    -webkit-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 0 auto 40px;
+    max-width: 400px;
+    padding: 15px;
+    position: relative;
+}
+
+.speech-bubble-ds p {
+    margin-bottom: 10px;
+}
+.speech-bubble-ds p:last-of-type {
+    margin-bottom: 0;
+}
+
+.speech-bubble-ds-arrow {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #a7a7a7;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+        </style></head><body><div class="page"><div class="story"><a name="id-00002"></a><h1>0.05 - The eye of the All Father</h1><div class="full"></div><ul><li><a class="xref" href="#enc_5_02_011_domedentrance@DD Storm King's Thunder">1 - Domed Entrance</a></li></ul><div class="frame"><p>A 40-foot-wide, naturally formed stone causeway, cliffs plunge hundreds of feet on both sides the floor is covered with a foot of snow. You can see fresh tracks heading toward the mountainside.</p></div><ul><li><b>Survival 15 </b>- the tracks are those of eight humans.</li></ul><div class="frame"><p>A stone dome carved from the mountainside. Six 30-foot-tall stone pillars support the dome, Each pillar is carved with:</p></div><ul><li>A hill giant lifting a rock above its head</li><li>A frost giant chopping down a great pine</li><li>A cloud giant flying among birds in the sky</li><li>A flying storm giant hurling lightning bolts at a ship</li><li>A stone giant climbing a mountain</li><li>A fire giant with chained dwarf prisoners in a cavern</li></ul><div class="frame"><p>A 40-foot-wide, 40-foot-high hallway heads into the mountain. Wind has blown the snow far into the hallway about 100 feet. The tracks continue into the dungeon</p></div><p></p><ul><li><a class="xref" href="#enc_5_02_022_stoneblocks@DD Storm King's Thunder">2. Stone Blocks</a></li></ul><div class="frame"><p>The tunnel is 40 feet wide, 40 feet tall, and level and you hear gunting in the distance.</p></div><ul><li><b>Pasive Perception 14 </b>- You notice gaps in the ceiling and that two hanging of the blocks hang lower than others</li><li><b>Search - Perception 14 </b>- 40-foot-tall, 40-foot-wide, 20-foot-thick slab held up by mechanisms buried in the mountainside</li><li>If lever in area 2A or BA used the block of stone falls, sealing off the tunnel.</li><li>They have 6 secs to get out of the way</li><li>PCs takes 132 (24d10) bludgeoning damage and is knocked prone and pinned underneath the block, or crushed to a pulp if the damage reduces its hit points to 0.</li><li>A creature pinned under a block is restrained until the block is lifted</li></ul></div><div class="story"><a name="id-00003"></a><h1>0.06 - The Main NPCs to Know (Copy)</h1><ul><li><a class="xref" href="#enc_1_03kinghekatonandhisdaughters@DD Storm King's Thunder">King Hekaton: </a></li></ul><p>Thinks that the Lords' Alliance killed his wife.</p><p>(dead wife) <b>Queen Neri: </b>Hekaton's wife, she was fond of "small folk" like humans and elves. She was actually killed by the Kraken Society. It is possible for the group to resurrect her if they think of it.</p><p>• (younger brother) <b>Imperator Uthor </b>: Commander of the king's garrison. Good guy.</p><p>• (youngest daughter) <b>Princess Serissa </b>: Will inherit the throne, is wise.</p><p>• (oldest daughter) <b>Mirran: </b>Spoiled, tempestuous, emotional. Wants to create a new giant empire.</p><p>• (middle daughter) <b>Nym: </b>Cold and unloving. She thinks that when Mirran rules, she'll fail and Nym will take over.</p><p><b>Iymrith: </b>Blue dragon that can turn into a storm giant. Manipulating everything.</p><p>• The Kraken Society: Mirran and Nym hired them to kill their mother using a legendary</p><p>kraken named Slarkrethel.</p></div><div class="story"><a name="id-00004"></a><h1>0.07 - Adventure Outline (Copy)</h1><table><tr><td>The group checks out a village that was recently attacked by giants.</td></tr><tr><td>A cloud giant takes the heroes to a settlement Bryn Shander</td></tr><tr><td>The group must defend that settlement from a giant attack.</td></tr><tr><td>From there, the group can follow all sorts of side adventures indifferent areas.</td></tr><tr><td>Eventually, they meet the frost giant hero named Harshnag.</td></tr><tr><td>Harshnag brings the group to an oracle who helps them figure out what is going on with the giants. The oracle first wants the group to retrieve giant artifacts from barbarian burial mounds.</td></tr><tr><td>The adventurers go to 9 different mounds and gets the items.</td></tr><tr><td>The group returns to the oracle with the items and are allowed to ask 6 questions. They can learn that they need to find out what happened to King Hekaton and that they need to get a conch from a giant lord.</td></tr><tr><td>Iymrith the blue dragon attacks during the oracle thing. Harshnag holds her off while the group escapes.</td></tr><tr><td>The heroes basically pick one giant lord out of five and attacks them. That giant lord has a conch of teleportation that will get the group to the undersea realm of Maelstrom.</td></tr><tr><td>In Maelstrom, Princess Serissa asks the group to find King Hekaton, her father. She gives them a clue - a gambling chip.</td></tr><tr><td>Investigation reveals that the chip is from a gambling business in Yartar. Going there ultimately reveals that the cult of the kraken has captured King Hekaton and they are keeping him on a boat.</td></tr><tr><td>The group rescues King Hekaton from the cult of the Kraken. The group may have to deal with the powerful kraken Slarkrethel, who will try to sink their ship.</td></tr><tr><td>The group can use the conch to return to Maelstrom. Hekaton finds out that Iymrith was behind his abduction and the slaying of his wife.</td></tr><tr><td>Teamed up with King Hekaton, the group has an epic final battle with Iymrith in her desert lair.</td></tr></table></div><div class="story"><a name="id-00005"></a><h1>0.03 - Bryn-Shander</h1><ul><li><a class="xref" href="#enc_3_02_01b1_outergates@DD Storm King's Thunder">Outer Gates</a></li></ul><div class="frame"><p>15-foot-high hinged wooden gates. Two 30-foot-tall cylindrical stone towers flank each gate.</p></div><p></p><ul><li><a class="xref" href="#enc_3_02_02b2_stables@DD Storm King's Thunder">Stables</a></li></ul><div class="frame"><p>These stables stand against the outer wall.</p></div><ul><li>4 horse's are there currenlty</li><li>A house can be quartered and fed for 1sp per night</li></ul><p></p><ul><li><a class="xref" href="#enc_3_02_03b3_councilhall@DD Storm King's Thunder">Council Hall</a></li></ul><div class="frame"><p>Located near the southwest gate is a nondescript warehouse.</p></div><ul><li>The speakers of Ten-Towns engage in discussions</li><li>When no meetings are in session, the building stands empty.</li><li>In the event of a crisis the council hall can be converted into a shelter for refugees.</li></ul><p></p><ul><li><a class="xref" href="#enc_3_02_04b4_houseofthetriad@DD Storm King's Thunder">House of the Triad</a></li></ul><div class="frame"><p>A large stone temple with three emblems of scales, gauntlets and hands bound at the wrist</p></div><ul><li><b>Religion 15</b> - It honors the three gods known as the Triad.</li><li><b>Tyr</b>, the god of justice;</li><li><b>Torm</b>, the god of courage self-sacrifice</li><li><b>Ilmater</b>, the god of endurance in the face of suffering</li></ul><div class="frame"><p>You see a young male human presit, with long brown hair and smile.</p></div><div class="full"><img style="max-width: 100%;" src="images/NPC Portraits/Dellvon Ludwig.png"></img><p><b>Dellvon Ludwig</b></p></div><ul></ul><div class="speech-bubble-ds"><p><strong>Dellvon </strong></p><p>Welcome friends to the House of the Triad, my name is Dellvon Ludwig are you hear to worship?</p><div class="speech-bubble-ds-arrow"></div></div><div class="frame"><p>Entering from a backroom you see a familiar face...</p></div><div class="full"><img style="max-width: 100%;" src="images/NPC Portraits/Sirac of Suzail.png"></img><p><b>Sirac of Suzail</b></p></div><ul></ul><div class="speech-bubble-ds"><p><strong>Dellvon</strong></p><p>Ah, Sirac... I would like to introduce you to...</p><div class="speech-bubble-ds-arrow"></div></div><div class="speech-bubble-ds"><p><strong>Sirac</strong></p><p>As I said I don't know much about my father but I want to help...Artus had connections to the Roaringhorns, a noble family in Waterdeep maybe you could start there? I could come with you but only as far as Luskan.</p><div class="speech-bubble-ds-arrow"></div></div></div></div><a name="npcs" /><h1>APPENDIX - NPCs</h1><div class="npclist2"></div><a name="items" /><h1>APPENDIX - ITEMS</h1><div id="FGCredits" style="page-break-before: always; text-align: center;"><img src="https://www.fantasygrounds.com/img/FGlogo600.png" alt="Fantasy Grounds Logo" style="width: 400px;" /><p>This campaign was created within the Fantasy Grounds virtual tabletop and printed using the FGPrintTool program provided by SmiteWorks USA LLC (SMITEWORKS). You are free to use this output for private non-commercial use. You may distribute this output as part of a Publisher Agreement with SMITEWORKS or through DMs Guild with the option checked to list the product as a Fantasy Grounds product. You are solely responsible for attaining any legal rights necessary to reproduce and distribute the contents produced herein. SMITEWORKS does not grant you ownership or rights to any content for which you do not otherwise already own the copyright.</p><p>Visit <a href="https://www.fantasygrounds.com/?referer=FGPrintTool" target="_blank" alt="Fantasy Grounds website">www.fantasygrounds.com</a> to find out more about our virtual tabletop and campaign management tool.</p><p>Fantasy Grounds is copyright SmiteWorks USA LLC, 2004-2019. All Rights Reserved.</p><p>Contact us at support@fantasygrounds.com with any questions or for support requests. The forum is also a great resource to get questions answered quickly or to find groups of players and gamemasters you can join.</p></div></body></html>

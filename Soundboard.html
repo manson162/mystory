@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css" />
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<link rel="stylesheet" href="main.css">
+<title>Kevin's Soundboard</title>
+
+<script>
+var y = 15;
+var status = 1;
+var storeName = "Name";
+
+        function element(x) {
+        fetch("https://www.syrinscape.com/online/frontend-api/elements/" + x + "/play/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c")
+    };        
+    
+
+
+    
+    function mood(y, p) { if (status < 1) {
+        fetch("https://www.syrinscape.com/online/frontend-api/moods/" + y + "/stop/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
+        document.getElementById(y).className = "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary";
+        document.getElementById(y).innerHTML = storeName;
+        status = 1;
+    } else {
+        
+        fetch("https://www.syrinscape.com/online/frontend-api/moods/" + y + "/play/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
+        storeName = document.getElementById(y).innerHTML;
+        console.log(storeName);
+        document.getElementById(y).innerHTML = "Playing";
+        document.getElementById(y).className = "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent";
+        status = 0;
+        console.log(y);
+        console.log(status);
+            
+    }
+
+        
+        
+    };
+
+    
+    </script>
+</head>
+<body>
+        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                <div class="mdl-tabs__tab-bar">
+                    <a href="#starks-panel" class="mdl-tabs__tab is-active">Moods</a>
+                    <a href="#lannisters-panel" class="mdl-tabs__tab">Elements</a>
+                    <a href="#targaryens-panel" class="mdl-tabs__tab">Fighting</a>
+                </div>
+            
+                <div class="mdl-tabs__panel is-active" id="starks-panel">
+                    <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--8-col">
+                                    <h4>Heading</h4>
+                                        <button id="21" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(21); ">Mood 1</button>
+                                        <button id="705" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705);">Mood 1</button>
+                                        <button id="y" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+
+
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <h4>Heading 2</h4>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <h4>Heading 3</h4>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <h4>Heading 4</h4>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <h4>Heading 5</h4>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                </div>
+                              </div>
+                </div>
+                <div class="mdl-tabs__panel" id="lannisters-panel">
+                        <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--8-col">
+                                <h4>Heading 6</h4>
+                                    <button id="test" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+
+
+                            </div>
+                            <div class="mdl-cell mdl-cell--8-col">
+                                    <h4>Heading 7</h4>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                            </div>
+                            <div class="mdl-cell mdl-cell--8-col">
+                                    <h4>Heading 8</h4>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                            </div>
+                            <div class="mdl-cell mdl-cell--8-col">
+                                    <h4>Heading 9</h4>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                            </div>
+                            <div class="mdl-cell mdl-cell--8-col">
+                                    <h4>Heading 10</h4>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                            </div>
+                          </div>
+
+                  
+                </div>
+                <div class="mdl-tabs__panel" id="targaryens-panel">
+                        <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <h4>Heading 11</h4>
+                                            <button id="test" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+        
+        
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--8-col">
+                                            <h4>Heading 12</h4>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--8-col">
+                                            <h4>Heading 13</h4>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--8-col">
+                                            <h4>Heading 14</h4>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--8-col">
+                                            <h4>Heading 15</h4>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1 ss</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
+                                    </div>
+                                  </div>
+                </div>
+              </div>
+
+
+    
+<!--
+    <button type="button" onclick="element(2618);">I did it</button>
+    <button type="button" onclick="element(2619);">I did it</button>
+    <button type="button" onclick="element(2620);">I did it</button>
+    <button type="button" onclick="element(2621);">I did it</button>
+    <button type="button" onclick="mood(705, 'play');">Mood</button>
+-->
+
+    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,348 +1,748 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css" />
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<link rel="stylesheet" href="main.css">
-<title>Kevin's Soundboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-red.min.css" />
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <link rel="stylesheet" href="main.css">
+        <title>Kevin's Soundboard</title>
 
-<script>
-var y = 15;
-var x = 15;
-var e = 15;
-var status = 1;
-var storeName = "Name";
+        <script>
+                var y = 15;
+                var x = 15;
+                var e = 15;
+                var status = 1;
+                var storeName = "Name";
 
-        function effect(x) { if (status < 1) {
-        fetch("https://www.syrinscape.com/online/frontend-api/elements/" + x + "/stop/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
-        document.getElementById(x).className = "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary";
-        document.getElementById(x).innerHTML = storeName;
-        status = 1;
-} else {
-        fetch("https://www.syrinscape.com/online/frontend-api/elements/" + x + "/play/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
-        storeName = document.getElementById(x).innerHTML;
-        console.log(storeName);
-        document.getElementById(x).className = "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent";
-        status = 0;
-        console.log(x);
-        console.log(status);
-            
-    }
-    };        
-    
+                function effect(x) {
+                        if (status < 1) {
+                                fetch("https://www.syrinscape.com/online/frontend-api/elements/" + x +
+                                        "/stop/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
+                                document.getElementById(x).className =
+                                        "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary";
+                                document.getElementById(x).innerHTML = storeName;
+                                status = 1;
+                        } else {
+                                fetch("https://www.syrinscape.com/online/frontend-api/elements/" + x +
+                                        "/play/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
+                                storeName = document.getElementById(x).innerHTML;
+                                console.log(storeName);
+                                document.getElementById(x).className =
+                                        "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent";
+                                status = 0;
+                                console.log(x);
+                                console.log(status);
+
+                        }
+                };
 
 
-    
-    function mood(y) { if (status < 1) {
-        fetch("https://www.syrinscape.com/online/frontend-api/moods/" + y + "/stop/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
-        document.getElementById(y).className = "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary";
-        var moodName = "Name";
-        document.getElementById(y).innerHTML = storeName;
-        status = 1;
-    } else {
-        
-        fetch("https://www.syrinscape.com/online/frontend-api/moods/" + y + "/play/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
-        storeName = document.getElementById(y).innerHTML;
-        console.log(storeName);
-        document.getElementById(y).innerHTML = "Playing";
-        document.getElementById(y).className = "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent";
-        status = 0;
-        console.log(y);
-        console.log(status);
-            
-    }
 
-        
-        
-    };
 
-    function element(e) {
-        fetch("https://www.syrinscape.com/online/frontend-api/elements/" + e + "/play/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
-            
-    };
+                function mood(y) {
+                        if (status < 1) {
+                                fetch("https://www.syrinscape.com/online/frontend-api/moods/" + y +
+                                        "/stop/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
+                                document.getElementById(y).className =
+                                        "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary";
+                                var moodName = "Name";
+                                document.getElementById(y).innerHTML = storeName;
+                                status = 1;
+                        } else {
 
-    
-    </script>
+                                fetch("https://www.syrinscape.com/online/frontend-api/moods/" + y +
+                                        "/play/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
+                                storeName = document.getElementById(y).innerHTML;
+                                console.log(storeName);
+                                document.getElementById(y).innerHTML = "Playing";
+                                document.getElementById(y).className =
+                                        "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent";
+                                status = 0;
+                                console.log(y);
+                                console.log(status);
+
+                        }
+
+
+
+                };
+
+                function element(e) {
+                        fetch("https://www.syrinscape.com/online/frontend-api/elements/" + e +
+                                "/play/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
+
+                };
+
+                function stop() {
+                        fetch(
+                        "https://www.syrinscape.com/online/frontend-api/moods/12584/play/?auth_token=7fbf0ac05ddfeed27a277718de562f2ed9e4e61c");
+
+                };
+        </script>
 </head>
+
 <body>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored fab" onclick="stop();">
+                <i class="material-icons">stop</i>
+        </button>
         <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-                <div class="mdl-tabs__tab-bar">
-                    <a href="#starks-panel" class="mdl-tabs__tab is-active">Moods</a>
-                    <a href="#lannisters-panel" class="mdl-tabs__tab">Elements</a>
-                    <a href="#targaryens-panel" class="mdl-tabs__tab">Fighting</a>
+                <div class="mdl-tabs__tab-bar" id="topBar">
+                        <a href="#starks-panel" class="mdl-tabs__tab is-active">Moods</a>
+                        <a href="#lannisters-panel" class="mdl-tabs__tab">Foley</a>
+                        <a href="#targaryens-panel" class="mdl-tabs__tab">Fighting</a>
+                        <a href="#spells-panel" class="mdl-tabs__tab">Spells</a>
                 </div>
-            
+
                 <div class="mdl-tabs__panel is-active" id="starks-panel">
-                    <div class="mdl-grid">
-                                <div class="mdl-cell mdl-cell--8-col">
-                                                <h4>Spotify Playlists</h4>
-                                                <button id="00001" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify" type="button" onclick="parent.open('https://open.spotify.com/playlist/3NYcM27cdv1SdGr5BaKOjt?play=true')">Samall Battle</button>
-                                                <button id="00001" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify" type="button" onclick="parent.open('https://open.spotify.com/playlist/0owy79ie2CPyNBBX3kYlnN?play=true')">Boss Battle</button>
-                                                <button id="00001" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify" type="button" onclick="parent.open('https://open.spotify.com/playlist/45zZjZIjJxqRQXFM80ntVL?play=true')">Creepy</button>
-                                                <button id="00001" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify" type="button" onclick="parent.open('https://open.spotify.com/playlist/72raMhZQoI1z9RrjHc1JKB?play=true')">Big Creepy</button>
-                                                <button id="00001" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify" type="button" onclick="parent.open('https://open.spotify.com/playlist/0cHjz26KSVx6px1eaRL2g0?play=true')">Peaceful</button>
-                                                <button id="00001" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify" type="button" onclick="parent.open('https://open.spotify.com/playlist/35a4YEx8BoaIHfH4PIwB9M?play=true')">Town Day</button>
-                                                <button id="00001" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify" type="button" onclick="parent.open('https://open.spotify.com/playlist/1yXlOFLCPI41DGP3FODxXO?play=true')">Tavern</button>
-            
+                        <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--8-col drop">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/Spotify.png">
+                                                <h4>Spotify</h4>
+
                                         </div>
-                                <div class="mdl-cell mdl-cell--8-col">
-                                    <h4>Elven Vale</h4>
-                                        <button id="21" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(21); ">Day</button>
-                                        <button id="31" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(31);">Day - Rain</button>
-                                        <button id="59" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(59);">Day - Birds</button>
-                                        <button id="32" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(32);">Night</button>
-                                        <button id="33" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(33);">Night - Rain</button>
-                                        <button id="40" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(40);">Night - Camp Fire</button>
-                                        <button id="58" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(58);">Night - Insects/Rain</button>
-                                        
+                                        <button id="00001"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify"
+                                                type="button"
+                                                onclick="parent.open('https://open.spotify.com/playlist/3NYcM27cdv1SdGr5BaKOjt?play=true')">Samall
+                                                Battle</button>
+                                        <button id="00001"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify"
+                                                type="button"
+                                                onclick="parent.open('https://open.spotify.com/playlist/0owy79ie2CPyNBBX3kYlnN?play=true')">Boss
+                                                Battle</button>
+                                        <button id="00001"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify"
+                                                type="button"
+                                                onclick="parent.open('https://open.spotify.com/playlist/45zZjZIjJxqRQXFM80ntVL?play=true')">Creepy</button>
+                                        <button id="00001"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify"
+                                                type="button"
+                                                onclick="parent.open('https://open.spotify.com/playlist/72raMhZQoI1z9RrjHc1JKB?play=true')">Big
+                                                Creepy</button>
+                                        <button id="00001"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify"
+                                                type="button"
+                                                onclick="parent.open('https://open.spotify.com/playlist/0cHjz26KSVx6px1eaRL2g0?play=true')">Peaceful</button>
+                                        <button id="00001"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify"
+                                                type="button"
+                                                onclick="parent.open('https://open.spotify.com/playlist/35a4YEx8BoaIHfH4PIwB9M?play=true')">Town
+                                                Day</button>
+                                        <button id="00001"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary spotify"
+                                                type="button"
+                                                onclick="parent.open('https://open.spotify.com/playlist/1yXlOFLCPI41DGP3FODxXO?play=true')">Tavern</button>
 
                                 </div>
                                 <div class="mdl-cell mdl-cell--8-col">
-                                        <h4>Farmland</h4>
-                                        <button id="961" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(961);">Daytime</button>
-                                        <button id="962" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(962)">Nightime</button>
-                                        <button id="963" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(963);">Out in the corn</button>
-                                        
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/elven_vale.png">
+                                                <h4>Elven Vale</h4>
+
+                                        </div>
+                                        <button id="21"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(21);">Day</button>
+                                        <button id="31"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(31);">Day - Rain</button>
+                                        <button id="59"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(59);">Day - Birds</button>
+                                        <button id="32"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(32);">Night</button>
+                                        <button id="33"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(33);">Night - Rain</button>
+                                        <button id="40"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(40);">Night - Camp Fire</button>
+                                        <button id="58"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(58);">Night - Insects/Rain</button>
+
+
                                 </div>
                                 <div class="mdl-cell mdl-cell--8-col">
-                                        <h4>Flooded Cave</h4>
-                                        <button id="78" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(78);">Dripping Cave</button>
-                                        <button id="82" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(82);">Tension Music</button>
-                                
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/farmland.png">
+                                                <h4>Farmland</h4>
+
+                                        </div>
+                                        <button id="961"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(961);">Daytime</button>
+                                        <button id="962"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(962)">Nightime</button>
+                                        <button id="963"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(963);">Out in the corn</button>
+
                                 </div>
                                 <div class="mdl-cell mdl-cell--8-col">
-                                        <h4>Brindol Town</h4>
-                                        <button id="35" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(35);">Market Day</button>
-                                        <button id="46" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(46);">Quiet Day</button>
-                                
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/flooded_cave.png">
+                                                <h4>Flooded Cave</h4>
+
+                                        </div>
+                                        <button id="78"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(78);">Dripping Cave</button>
+                                        <button id="82"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(82);">Tension Music</button>
+
                                 </div>
                                 <div class="mdl-cell mdl-cell--8-col">
-                                        <h4>Tavern</h4>
-                                        <button id="69" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(69);">Busy</button>
-                                        <button id="72" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(72);">Very Busy</button>
-                                        <button id="70" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(70);">Quiet Drink</button>
-                                        <button id="71" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(71);">Last Orders</button>
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/brindol_town.png">
+                                                <h4>Brindol Town</h4>
+
+                                        </div>
+                                        <button id="35"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(35);">Market Day</button>
+                                        <button id="46"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(46);">Quiet Day</button>
+
                                 </div>
                                 <div class="mdl-cell mdl-cell--8-col">
-                                        <h4>Blacksmiths</h4>
-                                        <button id="30016" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(30016);">Busy outside blacksmith</button>
-                                        <button id="30017" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(30017);">Inside</button>
-                                        <button id="30018" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(30018);">Stops to talk</button>
-                                        <button id="30019" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(30019);">Many blacksmiths</button>                                </div>
-                              
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/Tavern.png">
+                                                <h4>Tavern</h4>
+
+                                        </div>
+
+                                        <button id="69"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(69);">Busy</button>
+                                        <button id="72"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(72);">Very Busy</button>
+                                        <button id="70"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(70);">Quiet Drink</button>
+                                        <button id="71"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(71);">Last Orders</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/blacksmiths.png">
+                                                <h4>Blacksmiths</h4>
+
+                                        </div>
+                                        <button id="30016"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(30016);">Busy outside blacksmith</button>
+                                        <button id="30017"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(30017);">Inside</button>
+                                        <button id="30018"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(30018);">Stops to talk</button>
+                                        <button id="30019"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="mood(30019);">Many blacksmiths</button>
+                                </div>
+
                         </div>
                 </div>
                 <div class="mdl-tabs__panel" id="lannisters-panel">
                         <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--8-col">
-                                <h4>Victor</h4>
-                                <button id="10896" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10896);">Greetings</button>
-                                <button id="10907" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10907);">Hello Again</button>
-                                <button id="10895" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10895);">What do you want</button>
-                                <button id="10906" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10906);">Stay for a while</button>
-                                <button id="10891" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10891);">Just a Scratch</button>
-                                <button id="10892" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10892);">Yes</button>
-                                <button id="10901" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10901);">No</button>
-                                <button id="10904" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10904);">I Dont know</button>
-                                <button id="10903" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10903);">What</button>
-                                <button id="10900" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10900);">Cant Do That</button>
-                                <button id="10899" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10899);">What Else</button>
-                                <button id="10909" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10909);">Very Generouse</button>
-                                <button id="10898" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10898);">Bye Bye</button>
-                                <button id="10897" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(10897);">Come Back again</button>
-                                
+                                <div class="mdl-cell mdl-cell--8-col drop">
+                                        <div class="flex-container">
+                                                <img id="icons" src="/images/icons/Animal.png">
+                                                <h4>Animals</h4>
+
+                                        </div>
+
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="129" onclick="element(129);">Horse</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="156" onclick="element(156);">Cows</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="160" onclick="element(160);">Roster</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="82795" onclick="element(82795);">Sheep</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="1519" onclick="element(1519);">Night Bird</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="4477" onclick="element(4477);">Pigs</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="/images/icons/creepy.png">
+                                                <h4>Creepy</h4>
+
+                                        </div>
+
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="346" onclick="element(346);">Door Swings Shut</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="347" onclick="element(347);">Door Creaking</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="348" onclick="element(348);">Knocked Off The
+                                                Table</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="349" onclick="element(349);">Ghostly Noise</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="137809" onclick="element(137809);">Horror
+                                                Hits</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="138154" onclick="element(138154);">Crazy
+                                                Screaming</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="/images/icons/weather.png">
+                                                <h4>Weather</h4>
+
+                                        </div>
+
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="144" onclick="element(144);">Howling Wind</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="142" onclick="element(142);">Heavy Rain</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="138" onclick="element(138);">Lightning Strikes
+                                        </button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="155" onclick="element(155);">Thunder Claps</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="1007" onclick="element(1007);">Thunder Clap
+                                                (soft)</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="/images/icons/creepy.png">
+                                                <h4>Creepy</h4>
+
+                                        </div>
+
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="346" onclick="element(346);">Door Swings Shut</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="347" onclick="element(347);">Door Creaking</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="348" onclick="element(348);">Knocked Off The
+                                                Table</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="349" onclick="element(349);">Ghostly Noise</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="137809" onclick="element(137809);">Horror
+                                                Hits</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="138154" onclick="element(138154);">Crazy
+                                                Screaming</button>
+                                </div>
 
 
-                            </div>
 
-                            <div class="mdl-cell mdl-cell--8-col">
-                                    <h4>Animals</h4>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="129" onclick="element(129);">Horse</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="156" onclick="element(156);">Cows</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="160" onclick="element(160);">Roster</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="82795" onclick="element(82795);">Sheep</button>
-                            </div>
-                            <div class="mdl-cell mdl-cell--8-col">
-                                    <h4>Heading 9</h4>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                            </div>
-                            <div class="mdl-cell mdl-cell--8-col">
-                                    <h4>Heading 10</h4>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                            </div>
-                          </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="/images/icons/Victor.png">
+                                                <h4>Victor</h4>
 
-                  
+                                        </div>
+                                        <button id="10896"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10896);">Greetings</button>
+                                        <button id="10907"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10907);">Hello Again</button>
+                                        <button id="10895"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10895);">What do you want</button>
+                                        <button id="10906"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10906);">Stay for a while</button>
+                                        <button id="10891"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10891);">Just a Scratch</button>
+                                        <button id="10892"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10892);">Yes</button>
+                                        <button id="10901"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10901);">No</button>
+                                        <button id="10904"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10904);">I Dont know</button>
+                                        <button id="10903"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10903);">What</button>
+                                        <button id="10900"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10900);">Cant Do That</button>
+                                        <button id="10899"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10899);">What Else</button>
+                                        <button id="10909"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10909);">Very Generouse</button>
+                                        <button id="10898"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10898);">Bye Bye</button>
+                                        <button id="10897"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(10897);">Come Back again</button>
+
+                                </div>
+
+
+                        </div>
+
+
                 </div>
                 <div class="mdl-tabs__panel" id="targaryens-panel">
                         <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--8-col drop">
+                                        <div class="flex-container">
+                                                <img id="icons" src="/images/icons/shortsword.png">
+                                                <h4>Shortsword</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2476);" id="2476">Slash</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2474);" id="2474">Hit</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2479);" id="2479">Critical</button>
+
+
+
+                                </div>
                                 <div class="mdl-cell mdl-cell--8-col">
-                                        <h4>Generic Spells</h4>
-                                            <button id="2759" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(2759);">LVL 0</button>
-                                            <button id="2755" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(2755);">LVL 1</button>
-                                            <button id="2756" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(2756);">LVL 2</button>
-                                            <button id="2757" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(2757);">LVL 3</button>
-                                            <button id="2758" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(2758);">LVL 4</button>
-                                            <button id="2590" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(2590);">LVL 5</button>
-                                            <button id="2763" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(2763);">LVL 6</button>
-                                            <button id="2762" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(2762);">LVL 7</button>
-                                            <button id="2761" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(2761);">LVL 8</button>
-                                            <button id="2760" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="element(2760);">LVL 9</button>
-                                            
-        
-        
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>A - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2601" onclick="element(2601);">Acid Splash</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2599" onclick="element(2599);">Alarms</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2603" onclick="element(2603);">Arcane Marks</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2716" onclick="element(2716);">Auguries</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>B - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2739" onclick="element(2739);">Bleeding</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2738" onclick="element(2738);">Blessing</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>C - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2768" onclick="element(2768);">Cause Terror</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2769" onclick="element(2769);">Comprehension</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2603" onclick="element(2736);">Creating Water</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2726" onclick="element(2726);">Channel Energy</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>D - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2737" onclick="element(2737);">Divine Strength</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2731" onclick="element(2731);">Detect Magic</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2771" onclick="element(2771);">Detect Poisons</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2730" onclick="element(2730);">Dispel Sorcery</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2729" onclick="element(2729);">Doom</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>E - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2728" onclick="element(2728);">Eagles Charisma</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2772" onclick="element(2772);">Endure Elements</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>F - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="25466" onclick="element(25466);">Firebolt</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="25467" onclick="element(25467);">Firebolt (Female)</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="25468" onclick="element(25468);">Firebolt (Male)</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="25471" onclick="element(25471);">Force Missile</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>H - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2735" onclick="element(2735);">Heal Light</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2734" onclick="element(2734);">Heal Moderate </button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2733" onclick="element(2733);">Heal Serious</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2732" onclick="element(2732);">Heal Critical</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2727" onclick="element(2727);">Hold</button>
+                                        <div class="flex-container">
+                                                <img id="icons" src="/images/icons/longsword.png">
+                                                <h4>Longsword</h4>
 
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>L - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="25469" onclick="element(25469);">Lighting</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2773" onclick="element(2773);">Light Bright</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>M - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2725" onclick="element(2725);">Magical Circle</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2724" onclick="element(2724);">Magical Weapon</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2774" onclick="element(2774);">Mend</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>O - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2775" onclick="element(2775);">Obscuring Foge</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>P - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2723" onclick="element(2723);">Protection From Elements</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>R - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2721" onclick="element(2721);">Remove Diseases</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>S - Spells</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="5198" onclick="element(5198);">Scorching Ray</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="25470" onclick="element(25470);">Shocking Grasp</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2720" onclick="element(2720);">Silencing</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" id="2719" onclick="element(2719);">Summon Ally</button>
-                                    </div>
-                                    
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>Heading 13</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>Heading 14</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    </div>
-                                    <div class="mdl-cell mdl-cell--8-col">
-                                            <h4>Heading 15</h4>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1 ss</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" type="button" onclick="mood(705, 'play');">Mood 1</button>
-                                    </div>
-                                  </div>
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2477);" id="2477">Slash</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2782);" id="2782">Hit</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2781);" id="2781">Critical</button>
+
+
+
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="/images/icons/bow.png">
+                                                <h4>Bow</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2478);" id="2478">Draw</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2480);" id="2480">Fire</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2481);" id="2481">Critical</button>
+
+
+
+                                </div>
+
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <h3>Monsters</h3>
+                                        <div class="flex-container">
+                                                <img id="icons" src="/images/icons/earthelemental.png">
+                                                <h4>Earth Elemental</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="3076" onclick="element(3076);" id="3976">Summon</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(3077);" id="3077">Unsummon</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(3078);" id="3078">Banish</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(3079);" id="3079">Friendly Spell</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(3080);" id="3080">Unfriendly
+                                                Spell</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(3082);" id="3082">Injury</button>
+
+
+
+
+
+
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="/images/icons/fireelmental.png">
+                                                <h4>Fire Elemental</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(3976);" id="3976">Summon</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(3977);" id="3977">Unsummon</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(3978);" id="3978">Banish</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(3979);" id="3979">Fireball</button>
+
+
+
+                                </div>
+
+
+                        </div>
+
+
                 </div>
-              </div>
 
 
-    
-<!--
+                <div class="mdl-tabs__panel" id="spells-panel">
+                        <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--8-col drop">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/spells.png">
+                                                <h4>Generic Spells</h4>
+
+                                        </div>
+                                        <button id="2759"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2759);">LVL 0</button>
+                                        <button id="2755"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2755);">LVL 1</button>
+                                        <button id="2756"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2756);">LVL 2</button>
+                                        <button id="2757"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2757);">LVL 3</button>
+                                        <button id="2758"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2758);">LVL 4</button>
+                                        <button id="2590"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2590);">LVL 5</button>
+                                        <button id="2763"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2763);">LVL 6</button>
+                                        <button id="2762"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2762);">LVL 7</button>
+                                        <button id="2761"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2761);">LVL 8</button>
+                                        <button id="2760"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(2760);">LVL 9</button>
+                                        <button id="97317"
+                                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" onclick="element(97317);">Long Spell</button>
+
+
+
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/a.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2601" onclick="element(2601);">Acid Splash</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2599" onclick="element(2599);">Alarms</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2603" onclick="element(2603);">Arcane Marks</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2716" onclick="element(2716);">Auguries</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/b.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2739" onclick="element(2739);">Bleeding</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2738" onclick="element(2738);">Blessing</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/c.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2768" onclick="element(2768);">Cause Terror</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2769" onclick="element(2769);">Comprehension</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2603" onclick="element(2736);">Creating Water</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2726" onclick="element(2726);">Channel Energy</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/d.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2737" onclick="element(2737);">Divine
+                                                Strength</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2731" onclick="element(2731);">Detect Magic</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2771" onclick="element(2771);">Detect Poisons</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2730" onclick="element(2730);">Dispel Sorcery</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2729" onclick="element(2729);">Doom</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/e.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2728" onclick="element(2728);">Eagles
+                                                Charisma</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2772" onclick="element(2772);">Endure
+                                                Elements</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/f.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="25466" onclick="element(25466);">Firebolt</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="25467" onclick="element(25467);">Firebolt
+                                                (Female)</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="25468" onclick="element(25468);">Firebolt
+                                                (Male)</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="25471" onclick="element(25471);">Force
+                                                Missile</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/h.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2735" onclick="element(2735);">Heal Light</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2734" onclick="element(2734);">Heal Moderate </button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2733" onclick="element(2733);">Heal Serious</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2732" onclick="element(2732);">Heal Critical</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2727" onclick="element(2727);">Hold</button>
+
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/l.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="25469" onclick="element(25469);">Lighting</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2773" onclick="element(2773);">Light Bright</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/m.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2725" onclick="element(2725);">Magical Circle</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2724" onclick="element(2724);">Magical Weapon</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2774" onclick="element(2774);">Mend</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/o.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2775" onclick="element(2775);">Obscuring Foge</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/p.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2723" onclick="element(2723);">Protection From
+                                                Elements</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/r.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2721" onclick="element(2721);">Remove
+                                                Diseases</button>
+                                </div>
+                                <div class="mdl-cell mdl-cell--8-col">
+                                        <div class="flex-container">
+                                                <img id="icons" src="images/icons/s.png">
+                                                <h4>- Spells</h4>
+
+                                        </div>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="5198" onclick="element(5198);">Scorching Ray</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="25470" onclick="element(25470);">Shocking
+                                                Grasp</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2720" onclick="element(2720);">Silencing</button>
+                                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary"
+                                                type="button" id="2719" onclick="element(2719);">Summon Ally</button>
+                                </div>
+
+                        </div>
+                </div>
+
+        </div>
+
+
+
+        <!--
     <button type="button" onclick="element(2618);">I did it</button>
     <button type="button" onclick="element(2619);">I did it</button>
     <button type="button" onclick="element(2620);">I did it</button>
@@ -350,12 +750,13 @@ var storeName = "Name";
     <button type="button" onclick="mood(705, 'play');">Mood</button>
 -->
 
-    
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
 </body>
+
 </html>

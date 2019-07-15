@@ -348,7 +348,7 @@ ol.type li a:hover {
 .hover-bg .hover-text>h4 {
 	opacity: 0;
 	color: #fff;
-	font-weight: 400;
+	font-weight: 600;
 	-webkit-transform: translateY(100%);
 	transform: translateY(100%);
 	transition: all 0.3s;

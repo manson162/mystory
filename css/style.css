@@ -183,6 +183,11 @@ hr {
 .section-title.center {
 	padding: 25px 0 45px 0;
 }
+.subsection {
+	padding: 15px 0 5px 0;
+}
+
+
 /* About Section */
 #about {
 	padding: 100px 0;
@@ -739,3 +744,4 @@ header .intro-text {
 	padding: 10px 100px 20px 20px;
 }
 }
+

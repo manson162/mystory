@@ -797,6 +797,9 @@ header .intro-text {
 	i {
 		font-size: .5em !important;
 	}
+	.btn-icon {
+		font-size: 1.5em !important;
+	}
   }
 
 

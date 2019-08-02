@@ -791,6 +791,7 @@ header .intro-text {
 
   p {
 	  font-size: 21px !important;
+	  line-height: 1.8 !important;
   }
   
   @media only screen and (max-width: 992px) {
@@ -803,3 +804,7 @@ header .intro-text {
   }
 
 
+  .image-embed {
+	padding: 30px 0 30px 0 !important;
+  }
+  

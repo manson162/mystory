@@ -68,9 +68,9 @@
       <hr>
     </div>
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-12">
         <div class="about-text text-center">
-          <p>Schneider Electric one of the worlds biggest electrical manufacturers needed to replace their outdated estimating software. The system needed to allow a service engineer to create and manage quotes and have them synced on both a native iPad app and a webapp.</p>
+          <p>Schneider Electric one of the worlds biggest electrical manufacturers needed to replace their outdated Lotus Notes estimating software. The system needed to allow service engineers to create and manage quotes and be synced on both a native iPad app and a web app supported by internal administrators and managers.</p>
         </div>
         
       </div>
@@ -84,6 +84,63 @@
 </div>
 </div>
 </div>
+<div class="container">
+<div class="subsection text-center center">
+  <h2>My Role</h2>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="about-text text-center">
+      <p>I was responsible for the collection and the understanding of business requirements, user research, prototyping and design of both the iPad and Web app UI/UX.</p>
+
+      <p>In addition to leading the UX process, I also guided a team of three developers thought the full software development life cycle using JIRA sprint boards and the agile methodology.</p>
+    </div>
+    
+  </div>
+</div>
+</div>
+<div class="container">
+<div class="subsection text-center center">
+  <h2>Problem Statement</h2>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="about-text text-center">
+      <p>Lotus Notes was introduced into the company decades ago. At the time it proved useful for emails, notes, todo lists and other business processes so it was decided that it would be used for the estimating of service repairs for existing clients. This included quotes for material, labour and delivery.</p>
+      <p>Many of the customers have service level agreements and terms specific to contracts such as discount pricing and markups.</p>
+      
+      <img class="col-md-12 image-embed" src="img/portfolio/lotus notes.jpg" alt="">
+      
+      <p>As Lotus Notes was never designed for this purpose, the internal staff took it upon themselves to build macros and flesh out the gaps. The system had no materials database but would instead require a user to input the product code, description, price, markup, discount and delivery cost of each material needed for the job.</p>
+      <p>This was made even more difficult by the fact that service engineers are based on the road and at the time only provided with 13in Dell Thinkpads. They also needed to dial into a secure FTP server to access Lotus Notes, which proved extremely difficult as some sites strictly forbid the use of the Internet for national security reasons.</p>
+      <p>This leads to inaccuracies, inefficiencies and loss of revenue.</p>
+      <p>The system also needed to work with Schneider Electric’s two-factor authentication server Ping ID.</p>
+    </div>
+    
+  </div>
+</div>
+</div>
+<div class="container">
+<div class="subsection text-center center">
+  <h2>Project Goals</h2>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="about-text text-center">
+      <p>Move away from Lotus Notes</p>
+      <p>Consult with service engineers to identify problems</p>
+      <p>Speed up and improve the quote process</p>
+      <p>Access quotes offline</p>
+      <p>Implement two-factor authentication</p>
+      <p>Sync quotes with SAP</p>
+      <p>Give management better business intelligence</p>
+      <br>
+    </div>
+    
+  </div>
+</div>
+</div>
+
 <div id="resume" class="text-center adjust">
   <div class="container">
     <div class="section-title center process">
@@ -102,12 +159,12 @@
                 <h4 class="subheading">Understand</h4>
               </div>
               <div class="timeline-body">
-                <p>This project originated as a request for tender for a new estimating software system for 150 Schneider electric buildings service engineers, this included a 20 page technical document that outlined their existing system and its shortcomings with their expectations of what a new system would be like.</p><br>
+                <p>I started by first looking at the existing system and making a mind map using MindView. This helped me prepare detailed interview questions for each of the stockholders.</p><br>
 
-                  <p>It was clear from this document they wanted to make large scale improvements to how they delivered their “servicing” offer to benefit their customer but also to get much more visibility on contracts profitability and other PKI’s.</p><br>
+                  <p>Interviews were conducted onsite and record for later reference. I was then provided with technical documentation and a survey of service engineers opinion of the existing tool.</p><br>
                   
-                 <p> Unfortunately there were lots of contradiction within the document which I needed to investigate further. I surveyed, performed interviews and user testing with the engineers, their managers and relevant department heads.</p>
-                  </p>
+                 <p>After reviewing the material I ran an affinity diagram session to cluster and bundle my ideas as outlined in the image below.</p>
+                 <p>I used post-it notes, and the <a href="https://shop.ui-patterns.com/product/persuasive-patterns-card-deck/">Persuasive Patterns - Card Deck for this process.</a></p>
                   <br>
               </div>
 
@@ -125,10 +182,9 @@
                 <h4 class="subheading">Define</h4>
               </div>
               <div class="timeline-body">
-                <p>After performing my research I created 4 major personas, sales engineer, regional manager, administrator and divisional director.</p><br>
+                <p>After performing my initial research I used Adobe XD to create personas of each of the stakeholders to help me keep the users always in my mind throughout the process.</p><br>
                 <p>
-                  I created users flows and affinity diagrams to define my understanding of the problem.
-                  This really helped me clearly define the business logic and make sure this project would fully deliver on the needs of the business.
+                  I then used Adobe XD to create a high-level user flow of a service engineer making a simple quote and sending to a customer. This helped me define goals, behaviours and pain points for each of the steps as outlined in the image below.
                   </p><br>
               </div>
             </div>
@@ -145,7 +201,8 @@
                 <h4 class="subheading">Ideate</h4>
               </div>
               <div class="timeline-body">
-                <p>After defining the requirements, I then sketched low fidelity, high level concepts to answer some of the most difficult questions such as the user flow, interactions, technical limitations, and the overall planned solution.</p>
+                <p>I then used A4 plain paper and a sharpie pen to sketch out the main screens I knew I would need such as home, project details, quote, catalogue, send screen and existing quotes page and stuck them to my wall.</p>
+                <p>I then used Draw.io and Adobe XD to iterate and to test ideas with the team, and then I created a low fidelity flow diagram as outlined in the image below.</p>
               <br>
               </div>
             </div>
@@ -160,11 +217,11 @@
                 <h4 class="subheading">Prototype</h4>
               </div>
               <div class="timeline-body">
-                <p>I then used Adobe XD to create low fidelity prototypes of each of the main users flows for each of the personas and screen sizes.</p><br>
-                <p>I then defined a design system using the “Atom” methodology and applied this to the prototype.</p><br>
+                <p>I then used Adobe XD to create a medium-fidelity prototype of the main user flows for each of the personas and screen sizes.</p><br>
+                <p>We held weekly sprint meetings with the clients to show progress and get constant feedback.</p><br>
                 <p>
-                  I made the designs as interactive and “real world” as possible to demonstrate core concepts to stakeholders to make sure I had buy in and that the system would really meet their expectations.
-                  </p>
+                  I then defined a design system using the “Atom” methodology and applied this to the prototype.</p>
+                <p>I then used After Effects and Premiere Pro to create a video presentation/demonstration of my thinking to major stakeholders for initial feedback.</p>
                   <br>
                   
               </div>
@@ -180,7 +237,8 @@
                 <h4 class="subheading">Validate</h4>
               </div>
               <div class="timeline-body">
-                <p>I also ran large focus groups with 30 stakeholders with 11 iPads all running Adobe XD connected to my machine. This allowed them to each to try the prototype as if it were real and collect as much real world feedback as possible. </p>
+                <p>Once I had created the prototype I then define test cases and performed user testing with individuals that I recorded using Camtasia and large focus groups of around 30 service engineers.</p>
+                <p>I did this using Adobe XD’s live preview feature that allows you to connect as many devices as you want and gives the user the ability to play with the prototype while allowing me to take back control if the user ran into any difficulty.</p>
               </div>
             </div>
           </li>
@@ -211,7 +269,8 @@
                 <h4 class="subheading">Test</h4>
               </div>
               <div class="timeline-body">
-                <p>I also ran large focus groups with 30 stakeholders with 11 iPads all running Adobe XD connected to my machine. This allowed them to each to try the prototype as if it were real and collect as much real world feedback as possible. </p>
+                <p>The software development team used test-driven development to deliver both applications.</p>
+                <p>I then helped Schneider Electric organise user acceptance testing to identify any issues. I then worked with software developers to remediate and then retested.</p>
               </div>
             </div>
           </li>

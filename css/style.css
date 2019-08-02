@@ -154,6 +154,7 @@ hr {
 	color: #fff;
 	background-color: #121d1f;
 	padding: 10px 20px;
+	font-size: 21px;
 	border-color: #121d1f;
 	border-radius: 0;
 }
@@ -787,3 +788,8 @@ header .intro-text {
   .process {
 	  padding-top: 50px !important;
   }
+
+  p {
+	  font-size: 21px !important;
+  }
+  

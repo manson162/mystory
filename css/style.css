@@ -773,8 +773,8 @@ header .intro-text {
 	font-size: 30px;
 	padding-bottom: 50px;
   }
-  #bigimage {
-	  width: 1000px;
+  .bigimage {
+	  width: 100%;
   }
 
   @media only screen and (max-width: 992px) {
@@ -782,4 +782,8 @@ header .intro-text {
 		line-height: 40px;
 
 	}
+  }
+
+  .process {
+	  padding-top: 50px !important;
   }

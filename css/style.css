@@ -830,3 +830,17 @@ header .intro-text {
 	left: calc(-1 * (100vw - 100%) / 2);
 	color: rgba(0,0,0,.6);
   }
+
+/* ot Section */
+#ot {
+	padding: 100px 0;
+	background: #f6f6f6;
+}
+#ot .about-text {
+	margin-left: 10px;
+}
+
+#ot p {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
